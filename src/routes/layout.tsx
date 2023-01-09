@@ -6,11 +6,9 @@ export default component$(() => {
     <>
       <main>
         <Header />
-        <section>
-          <div class="mx-auto max-w-7xl">
-            <Slot />
-          </div>
-        </section>
+        <div class="mx-auto max-w-7xl">
+          <Slot />
+        </div>
       </main>
       <footer>
         Made with{" "}
