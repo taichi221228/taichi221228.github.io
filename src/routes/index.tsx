@@ -5,14 +5,12 @@ import Works from "~/components/works/works";
 
 export default component$(() => {
   return (
-    <>
-      <div class="mt-16">
-        <Hero />
-      </div>
-      <div class="my-24">
+    <div class="my-24">
+      <Hero />
+      <div class="mt-32">
         <Works />
       </div>
-    </>
+    </div>
   );
 });
 

@@ -6,7 +6,7 @@ export default component$(() => {
     <section>
       <h2 class="mb-9 text-4xl">WORKS</h2>
 
-      <div class="grid grid-cols-4 gap-10">
+      <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6">
         {itemList.map((item) => (
           <div class="rounded-lg bg-slate-200 shadow-lg">
             <div class="p-4">
