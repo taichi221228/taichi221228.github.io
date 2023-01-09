@@ -9,7 +9,7 @@ export default component$(() => {
       <div class="mt-16">
         <Hero />
       </div>
-      <div class="mt-24">
+      <div class="my-24">
         <Works />
       </div>
     </>
