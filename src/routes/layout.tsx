@@ -7,7 +7,9 @@ export default component$(() => {
       <main>
         <Header />
         <section>
-          <Slot />
+          <div class="mx-auto max-w-7xl">
+            <Slot />
+          </div>
         </section>
       </main>
       <footer>
