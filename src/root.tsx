@@ -4,6 +4,8 @@ import { RouterHead } from "./components/router-head/router-head";
 
 import globalStyles from "./global.css?inline";
 
+import "atropos/css";
+
 export default component$(() => {
   /**
    * The root of a QwikCity site always start with the <QwikCityProvider> component,
