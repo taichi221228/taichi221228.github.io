@@ -4,7 +4,7 @@ export default component$(() => {
   return (
     <footer class="border-t-2 py-6 text-center">
       Made with{" "}
-      <a href="https://www.github.com/taichi221228" target="_blank">
+      <a href="https://www.github.com/taichi221228/" target="_blank">
         ❤️
       </a>{" "}
       and{" "}
