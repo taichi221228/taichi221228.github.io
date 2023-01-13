@@ -1,6 +1,7 @@
 import { component$, useStyles$ } from "@builder.io/qwik";
 import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
+import { THEMES } from "./constants/theme";
 
 import globalStyles from "./global.css?inline";
 
@@ -23,6 +24,18 @@ export default component$(() => {
       <body lang="en">
         <RouterOutlet />
         <ServiceWorkerRegister />
+        <style>{`
+        body {
+          --tw-color-primary: ${THEMES[0].colors.primary};
+          --tw-color-primary-offset: ${THEMES[0].colors.primaryOffset};
+          --tw-color-secondary: ${THEMES[0].colors.secondary};
+          --tw-color-secondary-offset: ${THEMES[0].colors.secondaryOffset};
+          --tw-color-tertiary: ${THEMES[0].colors.tertiary};
+          --tw-color-tertiary-offset: ${THEMES[0].colors.tertiaryOffset};
+          --tw-color-quaternary: ${THEMES[0].colors.quaternary};
+          --tw-color-quinary: ${THEMES[0].colors.quinary};
+        }
+      `}</style>
       </body>
     </QwikCityProvider>
   );
