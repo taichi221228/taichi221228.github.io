@@ -21,6 +21,6 @@
       "~/*": ["./src/*"]
     }
   },
-  "files": ["./.eslintrc.cjs", "./postcss.config.js"],
+  "files": ["./.eslintrc.cjs", "./postcss.config.js", "./tailwind.config.js"],
   "include": ["src"]
 }
