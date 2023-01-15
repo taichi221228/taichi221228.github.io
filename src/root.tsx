@@ -35,6 +35,21 @@ export default component$(() => {
           --tw-color-quaternary: ${THEMES[0].colors.quaternary};
           --tw-color-quinary: ${THEMES[0].colors.quinary};
         }
+
+        ${THEMES.map(
+          ({ name, colors }) => `
+            .theme-${name} {
+              --tw-color-primary: ${colors.primary};
+              --tw-color-primary-offset: ${colors.primaryOffset};
+              --tw-color-secondary: ${colors.secondary};
+              --tw-color-secondary-offset: ${colors.secondaryOffset};
+              --tw-color-tertiary: ${colors.tertiary};
+              --tw-color-tertiary-offset: ${colors.tertiaryOffset};
+              --tw-color-quaternary: ${colors.quaternary};
+              --tw-color-quinary: ${colors.quinary};
+            }
+          `
+        ).join("")}
       `}</style>
       </body>
     </QwikCityProvider>
