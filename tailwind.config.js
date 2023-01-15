@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const plugin = require("tailwindcss/plugin");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
@@ -14,5 +17,5 @@ module.exports = {
       quinary: "var(--tw-color-quinary)",
     },
   },
-  plugins: [],
+  plugins: [plugin(({ addVariant }) => addVariant("where", ":where(&)"))],
 };
