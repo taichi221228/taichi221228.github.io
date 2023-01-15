@@ -5,7 +5,7 @@ export const itemList = [
     description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     link: "https://www.builder.io/",
     image: {
-      src: "https://via.placeholder.com/150",
+      src: "https://loremflickr.com/320/320/oacean",
       alt: "",
     },
   },
@@ -15,7 +15,7 @@ export const itemList = [
     description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     link: "https://www.builder.io/",
     image: {
-      src: "https://via.placeholder.com/150",
+      src: "https://loremflickr.com/320/320/sky",
       alt: "",
     },
   },
@@ -25,7 +25,7 @@ export const itemList = [
     description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     link: "https://www.builder.io/",
     image: {
-      src: "https://via.placeholder.com/150",
+      src: "https://loremflickr.com/320/320/forest",
       alt: "",
     },
   },
@@ -35,7 +35,7 @@ export const itemList = [
     description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     link: "https://www.builder.io/",
     image: {
-      src: "https://via.placeholder.com/150",
+      src: "https://loremflickr.com/320/320/space",
       alt: "",
     },
   },
