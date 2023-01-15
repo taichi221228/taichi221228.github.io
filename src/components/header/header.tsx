@@ -4,11 +4,11 @@ import ThemeButton from "../theme/button";
 import ThemeTrack from "../theme/track";
 
 export default component$(() => {
-  const isThemeTrackVisible = useSignal(false);
+  const isThemeTrackVisibleSignal = useSignal(false);
 
   return (
     <>
-      <ThemeTrack isVisible={isThemeTrackVisible.value} />
+      <ThemeTrack isVisibleSignal={isThemeTrackVisibleSignal} />
       <header class="py-8">
         <div class="mx-auto flex w-11/12 max-w-7xl justify-between">
           <div>
@@ -18,11 +18,7 @@ export default component$(() => {
             </a>
           </div>
 
-          <ThemeButton
-            onClick$={() => {
-              isThemeTrackVisible.value = !isThemeTrackVisible.value;
-            }}
-          />
+          <ThemeButton onClick$={() => (isThemeTrackVisibleSignal.value = !isThemeTrackVisibleSignal.value)} />
         </div>
       </header>
     </>
