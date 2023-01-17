@@ -1,9 +1,11 @@
 import { useContext } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
-import { THEMES } from "~/constants/theme";
+
 import CloseButton from "../button/close";
+
 import Card from "./card";
 import { ThemeContext } from "./provider";
+import { THEMES } from "~/constants/theme";
 
 export default component$(() => {
   const themeContext = useContext(ThemeContext);

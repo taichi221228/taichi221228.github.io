@@ -1,8 +1,10 @@
-import type { PropFunction } from "@builder.io/qwik";
 import { useContext } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
-import type { Theme } from "~/types/theme";
+
 import { ThemeContext } from "./provider";
+import type { Theme } from "~/types/theme";
+
+import type { PropFunction } from "@builder.io/qwik";
 
 interface Props {
   theme: Theme["name"];

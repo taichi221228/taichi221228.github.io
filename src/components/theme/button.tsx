@@ -1,5 +1,6 @@
 import { useContext } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
+
 import { ThemeContext } from "./provider";
 
 export default component$(() => {

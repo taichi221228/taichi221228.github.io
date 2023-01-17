@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
-import { Atropos } from "~/integrations/react/atropos";
+
 import { itemList } from "./mock";
+import { Atropos } from "~/integrations/react/atropos";
 
 export default component$(() => {
   return (

@@ -1,5 +1,6 @@
-import type { PropFunction } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
+
+import type { PropFunction } from "@builder.io/qwik";
 
 interface Props {
   onClick$: PropFunction<() => any>;
