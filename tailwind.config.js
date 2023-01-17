@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
+      transparent: "transparent",
       primary: "var(--tw-color-primary)",
       "primary-offset": "var(--tw-color-primary-offset)",
       secondary: "var(--tw-color-secondary)",
