@@ -16,7 +16,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ["@typescript-eslint", "import"],
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -33,5 +33,26 @@ module.exports = {
     "no-console": "off",
     "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/consistent-type-imports": "warn",
+    "import/order": [
+      "warn",
+      {
+        alphabetize: { order: "asc" },
+        groups: ["builtin", "external", "parent", "sibling", "index", "object", "type"],
+        "newlines-between": "always",
+        pathGroups: [
+          {
+            group: "builtin",
+            pattern: "{@builder.io*,react*}",
+            position: "before",
+          },
+          {
+            group: "sibling",
+            pattern: "{~,.}/**",
+            position: "before",
+          },
+        ],
+        pathGroupsExcludedImportTypes: ["builtin"],
+      },
+    ],
   },
 };
