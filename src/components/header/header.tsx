@@ -1,14 +1,12 @@
-import { component$, useSignal } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import Icon from "../icon/icon";
 import ThemeButton from "../theme/button";
-import ThemeTrack from "../theme/track";
+import ThemeMenu from "../theme/menu";
 
 export default component$(() => {
-  const isThemeTrackVisibleSignal = useSignal(false);
-
   return (
     <>
-      <ThemeTrack isVisibleSignal={isThemeTrackVisibleSignal} />
+      <ThemeMenu />
       <header class="py-8">
         <div class="mx-auto flex w-11/12 max-w-7xl justify-between">
           <div>
@@ -18,7 +16,7 @@ export default component$(() => {
             </a>
           </div>
 
-          <ThemeButton onClick$={() => (isThemeTrackVisibleSignal.value = !isThemeTrackVisibleSignal.value)} />
+          <ThemeButton />
         </div>
       </header>
     </>

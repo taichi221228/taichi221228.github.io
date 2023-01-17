@@ -1,12 +1,27 @@
+import type { PropFunction } from "@builder.io/qwik";
+import { useContext } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
 import type { Theme } from "~/types/theme";
+import { ThemeContext } from "./provider";
 
-export default component$((props: Pick<Theme, "name">) => {
+interface Props {
+  theme: Theme["name"];
+  onClick$: PropFunction<() => any>;
+}
+
+export default component$((props: Props) => {
+  const themeContext = useContext(ThemeContext);
+
   return (
-    <div class={`bg-primary rounded-xl p-4 theme-${props.name}`}>
+    <div
+      onClick$={props.onClick$}
+      class={`bg-primary rounded-xl p-3 theme-${props.theme} ${
+        themeContext.value === props.theme ? "border-tertiary border-2" : "cursor-pointer transition-transform duration-300 hover:scale-110 hover:shadow-xl"
+      }`}
+    >
       <p class="text-secondary mb-2 text-center">
-        {props.name.charAt(0).toUpperCase()}
-        {props.name.slice(1)}
+        {props.theme.charAt(0).toUpperCase()}
+        {props.theme.slice(1)}
       </p>
       <div class="flex">
         <div class="bg-tertiary shadow-quinary h-6 w-6 rounded-full shadow-[0_0_0_2px]" />

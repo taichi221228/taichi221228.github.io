@@ -12,7 +12,6 @@
 
 @layer base {
   body {
-    @apply bg-primary text-secondary;
     font-family: "Chalkboard SE", sans-serif;
   }
 }
