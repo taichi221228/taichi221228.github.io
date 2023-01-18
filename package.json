@@ -49,5 +49,8 @@
     "undici": "5.14.0",
     "vite": "4.0.3",
     "vite-tsconfig-paths": "3.5.0"
+  },
+  "dependencies": {
+    "@fontsource/mochiy-pop-p-one": "^4.5.9"
   }
 }
