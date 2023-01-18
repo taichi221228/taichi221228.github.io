@@ -14,9 +14,9 @@ export default component$(() => {
     <div class={`bg-primary-offset relative overflow-hidden px-6 py-8 transition-all ${themeContext.isMenuVisible || "-mt-48"}`}>
       <CloseButton onClick$={() => (themeContext.isMenuVisible = false)} class="absolute top-3 right-3" />
       <p class="mb-4 text-center">SELECT THEME</p>
-      <div class="flex gap-4">
-        {THEMES.map(({ name }) => (
-          <Card key={name} theme={name} onClick$={() => (themeContext.value = name)} />
+      <div class="-m-8 flex gap-4 overflow-x-auto p-8">
+        {THEMES.map(({ id, name }) => (
+          <Card key={id} id={id} name={name} onClick$={() => (themeContext.id = id)} />
         ))}
       </div>
     </div>

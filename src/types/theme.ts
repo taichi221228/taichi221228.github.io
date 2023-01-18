@@ -1,4 +1,5 @@
 export interface Theme {
+  id: string;
   name: string;
   colors: {
     primary: string;
@@ -10,4 +11,5 @@ export interface Theme {
     quaternary: string;
     quinary: string;
   };
+  isDarkType: boolean;
 }

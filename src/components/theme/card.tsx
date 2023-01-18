@@ -6,10 +6,9 @@ import type { Theme } from "~/types/theme";
 
 import type { PropFunction } from "@builder.io/qwik";
 
-interface Props {
-  theme: Theme["name"];
+type Props = {
   onClick$: PropFunction<() => any>;
-}
+} & Pick<Theme, "id" | "name">;
 
 export default component$((props: Props) => {
   const themeContext = useContext(ThemeContext);
@@ -17,14 +16,11 @@ export default component$((props: Props) => {
   return (
     <div
       onClick$={props.onClick$}
-      class={`bg-primary rounded-xl p-3 theme-${props.theme} ${
-        themeContext.value === props.theme ? "border-tertiary border-2" : "cursor-pointer transition-transform duration-300 hover:scale-110 hover:shadow-xl"
+      class={`bg-primary rounded-xl p-3 transition-transform duration-300 theme-${props.id} ${
+        themeContext.id === props.id ? "border-tertiary border-2" : "cursor-pointer hover:scale-110 hover:shadow-xl"
       }`}
     >
-      <p class="text-secondary mb-2 text-center">
-        {props.theme.charAt(0).toUpperCase()}
-        {props.theme.slice(1)}
-      </p>
+      <p class="text-secondary mb-2 text-center text-xs">{props.name}</p>
       <div class="flex">
         <div class="bg-tertiary shadow-quinary h-6 w-6 rounded-full shadow-[0_0_0_2px]" />
         <div class="bg-quaternary shadow-quinary h-6 w-6 rounded-full shadow-[0_0_0_2px]" />

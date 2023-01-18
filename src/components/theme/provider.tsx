@@ -3,15 +3,15 @@ import { component$, createContext, Slot, useClientEffect$, useContextProvider, 
 import { THEMES } from "~/constants/theme";
 import type { Theme } from "~/types/theme";
 
-type ThemeStore = { value: Theme["name"]; isMenuVisible: boolean };
+type ThemeStore = { isMenuVisible: boolean } & Pick<Theme, "id" | "isDarkType">;
 
 export const themeStyle = THEMES.map(
-  ({ name, colors }) => `
-    .theme-${name} {
+  ({ id, colors }) => `
+    .theme-${id} {
       ${Object.entries(colors)
-        .map(([key, value]) => {
+        .map(([key, id]) => {
           const cssKey = key.replace(/([A-Z])/g, "-$1").toLowerCase();
-          return `--tw-color-${cssKey}: ${value};`;
+          return `--tw-color-${cssKey}: ${id};`;
         })
         .join("")}
     }
@@ -23,16 +23,19 @@ export const ThemeContext = createContext<ThemeStore>("theme");
 export default component$(() => {
   useStyles$(themeStyle);
 
-  const themeStore = useStore<ThemeStore>({ value: THEMES[0].name, isMenuVisible: false });
+  const themeStore = useStore<ThemeStore>({ id: THEMES[0].id, isDarkType: THEMES[0].isDarkType, isMenuVisible: false });
   useContextProvider(ThemeContext, themeStore);
 
   useClientEffect$(() => {
-    themeStore.value = localStorage.getItem("theme") ?? THEMES[0].name;
+    themeStore.id = localStorage.getItem("theme") ?? THEMES[0].id;
   });
 
   useClientEffect$(({ track }) => {
-    const theme = track(() => themeStore.value);
-    localStorage.setItem("theme", theme);
+    const id = track(() => themeStore.id);
+    const theme = THEMES.find((theme) => theme.id === id);
+    if (!theme) return;
+    localStorage.setItem("theme", id);
+    themeStore.isDarkType = theme.isDarkType;
   });
 
   useClientEffect$(({ track }) => {
@@ -41,7 +44,7 @@ export default component$(() => {
   });
 
   return (
-    <div class={`bg-primary text-secondary theme-${themeStore.value}`}>
+    <div class={`bg-primary text-secondary theme-${themeStore.id}`}>
       <Slot />
     </div>
   );

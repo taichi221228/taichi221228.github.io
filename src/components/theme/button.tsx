@@ -11,7 +11,9 @@ export default component$(() => {
   return (
     <button
       onClick$={() => (themeContext.isMenuVisible = !themeContext.isMenuVisible)}
-      class="bg-primary-offset duration flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:brightness-95"
+      class={`bg-primary-offset duration flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 ${
+        themeContext.isDarkType ? "hover:brightness-150" : "hover:brightness-95"
+      }`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
