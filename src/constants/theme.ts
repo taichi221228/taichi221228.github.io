@@ -1,6 +1,6 @@
 import type { Theme } from "~/types/theme";
 
-export const THEMES: Theme[] = [
+export const THEMES = [
   {
     name: "classic",
     colors: {
@@ -27,4 +27,4 @@ export const THEMES: Theme[] = [
       quinary: "#2d2d2d",
     },
   },
-];
+] satisfies Theme[];
