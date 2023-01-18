@@ -16,9 +16,9 @@ export default component$((props: Props) => {
   return (
     <div
       onClick$={props.onClick$}
-      class={`bg-primary rounded-xl p-3 transition-transform duration-300 theme-${props.id} ${
+      class={`theme-${props.id} ${
         themeContext.id === props.id ? "border-tertiary border-2" : "cursor-pointer hover:scale-110 hover:shadow-xl"
-      }`}
+      } bg-primary rounded-xl p-3 transition-transform duration-300`}
     >
       <p class="text-secondary mb-2 text-center text-xs">{props.name}</p>
       <div class="flex">

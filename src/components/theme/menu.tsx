@@ -11,7 +11,7 @@ export default component$(() => {
   const themeContext = useContext(ThemeContext);
 
   return (
-    <div class={`bg-primary-offset relative overflow-hidden px-6 py-8 transition-all ${themeContext.isMenuVisible || "-mt-48"}`}>
+    <div class={`${themeContext.isMenuVisible || "-mt-48"} bg-primary-offset relative overflow-hidden px-6 py-8 transition-all`}>
       <CloseButton onClick$={() => (themeContext.isMenuVisible = false)} class="absolute top-3 right-3" />
       <p class="mb-4 text-center">SELECT THEME</p>
       <div class="-m-8 flex gap-4 overflow-x-auto p-8">

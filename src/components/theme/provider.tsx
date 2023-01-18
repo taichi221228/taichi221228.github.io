@@ -44,7 +44,7 @@ export default component$(() => {
   });
 
   return (
-    <div class={`bg-primary text-secondary theme-${themeStore.id}`}>
+    <div class={`theme-${themeStore.id} bg-primary text-secondary`}>
       <Slot />
     </div>
   );
