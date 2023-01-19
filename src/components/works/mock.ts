@@ -1,8 +1,10 @@
-export const itemList = [
+const description = "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.";
+
+export const items = [
   {
     id: "1",
     title: "foo",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    description,
     link: "https://www.builder.io/",
     image: {
       src: "https://loremflickr.com/320/320/oacean",
@@ -12,7 +14,7 @@ export const itemList = [
   {
     id: "2",
     title: "bar",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    description,
     link: "https://www.builder.io/",
     image: {
       src: "https://loremflickr.com/320/320/sky",
@@ -22,7 +24,7 @@ export const itemList = [
   {
     id: "3",
     title: "baz",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    description,
     link: "https://www.builder.io/",
     image: {
       src: "https://loremflickr.com/320/320/forest",
@@ -32,7 +34,7 @@ export const itemList = [
   {
     id: "4",
     title: "qux",
-    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    description,
     link: "https://www.builder.io/",
     image: {
       src: "https://loremflickr.com/320/320/space",
