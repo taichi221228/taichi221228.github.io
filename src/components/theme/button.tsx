@@ -13,7 +13,7 @@ export default component$(() => {
       onClick$={() => (themeContext.isMenuVisible = !themeContext.isMenuVisible)}
       class={`${
         themeContext.isDarkType ? "hover:brightness-150" : "hover:brightness-95"
-      } bg-primary-offset duration flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300`}
+      } bg-primary-offset flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

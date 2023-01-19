@@ -7,9 +7,9 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
-    <div class="my-24">
+    <div class="mt-40 mb-24">
       <Hero />
-      <div class="mt-32">
+      <div class="mt-44">
         <Works />
       </div>
     </div>
