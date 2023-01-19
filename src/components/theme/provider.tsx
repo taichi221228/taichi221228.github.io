@@ -9,9 +9,9 @@ export const themeStyle = THEMES.map(
   ({ id, colors }) => `
     .theme-${id} {
       ${Object.entries(colors)
-        .map(([key, id]) => {
-          const cssKey = key.replace(/([A-Z])/g, "-$1").toLowerCase();
-          return `--tw-color-${cssKey}: ${id};`;
+        .map(([key, value]) => {
+          const kebabKey = key.replace(/([A-Z])/g, "-$1").toLowerCase();
+          return `--tw-color-${kebabKey}: ${value};`;
         })
         .join("")}
     }
@@ -46,6 +46,13 @@ export default component$(() => {
   return (
     <div class={`theme-${themeStore.id} bg-primary text-secondary`}>
       <Slot />
+      <style>
+        {`
+          body {
+            --tw-shadow-rgb-code: ${themeStore.isDarkType ? "125 125 125" : "0 0 0"};
+          }
+        `}
+      </style>
     </div>
   );
 });

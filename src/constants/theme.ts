@@ -32,7 +32,7 @@ export const THEMES = [
     isDarkType: true,
   },
   {
-    id: "beach",
+    id: "koopa",
     name: "Koopa Beach",
     colors: {
       primary: "#fffffe",

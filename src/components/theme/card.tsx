@@ -17,7 +17,7 @@ export default component$((props: Props) => {
     <div
       onClick$={props.onClick$}
       class={`theme-${props.id} ${
-        themeContext.id === props.id ? "border-tertiary border-2" : "cursor-pointer hover:scale-110 hover:shadow-xl"
+        themeContext.id === props.id ? "border-tertiary border-2" : `cursor-pointer hover:scale-110 hover:shadow`
       } bg-primary rounded-xl p-3 transition-transform duration-300`}
     >
       <p class="text-secondary mb-2 text-center text-xs">{props.name}</p>

@@ -17,6 +17,9 @@ module.exports = {
       quaternary: "var(--tw-color-quaternary)",
       quinary: "var(--tw-color-quinary)",
     },
+    boxShadow: {
+      DEFAULT: "0 20px 25px -5px rgba(var(--tw-shadow-rgb-code) / 0.12), 0 8px 10px -6px rgba(var(--tw-shadow-rgb-code) / 0.12);",
+    },
   },
   plugins: [plugin(({ addVariant }) => addVariant("where", ":where(&)"))],
 };
