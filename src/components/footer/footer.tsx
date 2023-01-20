@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
   return (
-    <footer class="border-quinary border-t-2 py-6 text-center">
+    <footer data-fade="3" class="border-quinary border-t-2 py-6 text-center">
       Made with{" "}
       <a href="https://www.github.com/taichi221228/" target="_blank">
         ❤️
