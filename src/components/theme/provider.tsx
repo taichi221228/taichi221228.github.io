@@ -3,7 +3,7 @@ import { component$, createContext, Slot, useClientEffect$, useContextProvider, 
 import { THEMES } from "~/constants/theme";
 import type { Theme } from "~/types/theme";
 
-type Store = { isMenuVisible: boolean } & Pick<Theme, "id">;
+type Store = { isMenuVisible: boolean } & Pick<Theme, "id" | "isDarkType">;
 
 export const style = `
   ${THEMES.map(
@@ -39,7 +39,7 @@ export const ThemeContext = createContext<Store>("theme");
 export default component$(() => {
   useStyles$(style);
 
-  const store = useStore<Store>({ id: THEMES[0].id, isMenuVisible: false });
+  const store = useStore<Store>({ ...THEMES[0], isMenuVisible: false });
   useContextProvider(ThemeContext, store);
 
   useClientEffect$(() => {
@@ -50,6 +50,7 @@ export default component$(() => {
     const id = track(() => store.id);
     const theme = THEMES.find((theme) => theme.id === id);
     if (!theme) return;
+    store.isDarkType = theme.isDarkType;
     const { documentElement } = document;
     localStorage.setItem("theme", id);
     documentElement.dataset.theme = id;
