@@ -15,8 +15,9 @@ export default component$((props: Props) => {
 
   return (
     <div
+      data-theme={props.id}
       onClick$={props.onClick$}
-      class={`theme-${props.id} ${
+      class={`${
         themeContext.id === props.id ? "border-tertiary border-2" : `cursor-pointer hover:scale-110 hover:shadow`
       } bg-primary rounded-xl p-3 transition-transform duration-300`}
     >

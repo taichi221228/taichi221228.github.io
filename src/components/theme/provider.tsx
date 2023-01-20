@@ -3,27 +3,43 @@ import { component$, createContext, Slot, useClientEffect$, useContextProvider, 
 import { THEMES } from "~/constants/theme";
 import type { Theme } from "~/types/theme";
 
-type Store = { isMenuVisible: boolean } & Pick<Theme, "id" | "isDarkType">;
+type Store = { isMenuVisible: boolean } & Pick<Theme, "id">;
 
-export const style = THEMES.map(
-  ({ id, colors }) => `
-    .theme-${id} {
-      ${Object.entries(colors)
-        .map(([key, value]) => {
-          const kebabKey = key.replace(/([A-Z])/g, "-$1").toLowerCase();
-          return `--tw-color-${kebabKey}: ${value};`;
-        })
-        .join("")}
-    }
-  `
-).join("");
+export const style = `
+  ${THEMES.map(
+    ({ id, colors, isDarkType }) => `
+      [data-theme="${id}"] {
+        ${Object.entries(colors)
+          .map(([key, value]) => {
+            const kebabKey = key.replace(/([A-Z])/g, "-$1").toLowerCase();
+            return `--tw-color-${kebabKey}: ${value};`;
+          })
+          .join("")}
+          --tw-shadow-rgb-code: ${isDarkType ? "125 125 125" : "0 0 0"};
+      }
+    `
+  ).join("")}
+  ::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: var(--tw-color-primary-offset);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--tw-color-quinary);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--tw-color-tertiary);
+  }
+`;
 
 export const ThemeContext = createContext<Store>("theme");
 
 export default component$(() => {
   useStyles$(style);
 
-  const store = useStore<Store>({ id: THEMES[0].id, isDarkType: THEMES[0].isDarkType, isMenuVisible: false });
+  const store = useStore<Store>({ id: THEMES[0].id, isMenuVisible: false });
   useContextProvider(ThemeContext, store);
 
   useClientEffect$(() => {
@@ -34,8 +50,9 @@ export default component$(() => {
     const id = track(() => store.id);
     const theme = THEMES.find((theme) => theme.id === id);
     if (!theme) return;
+    const { documentElement } = document;
     localStorage.setItem("theme", id);
-    store.isDarkType = theme.isDarkType;
+    documentElement.dataset.theme = id;
   });
 
   useClientEffect$(({ track }) => {
@@ -44,15 +61,8 @@ export default component$(() => {
   });
 
   return (
-    <div class={`theme-${store.id} bg-primary text-secondary`}>
+    <div class="bg-primary text-secondary">
       <Slot />
-      <style>
-        {`
-          body {
-            --tw-shadow-rgb-code: ${store.isDarkType ? "125 125 125" : "0 0 0"};
-          }
-        `}
-      </style>
     </div>
   );
 });
