@@ -25,6 +25,7 @@
     "@builder.io/qwik": "0.16.2",
     "@builder.io/qwik-city": "0.0.128",
     "@builder.io/qwik-react": "0.2.1",
+    "@fontsource/mochiy-pop-p-one": "^4.5.9",
     "@types/eslint": "8.4.10",
     "@types/node": "^18.11.18",
     "@types/node-fetch": "latest",
@@ -34,6 +35,7 @@
     "@typescript-eslint/parser": "^5.48.2",
     "atropos": "^1.0.2",
     "autoprefixer": "10.4.11",
+    "babel-plugin-preval": "^5.1.0",
     "eslint": "8.31.0",
     "eslint-import-resolver-typescript": "^3.5.3",
     "eslint-plugin-import": "^2.27.5",
@@ -49,8 +51,5 @@
     "undici": "5.14.0",
     "vite": "4.0.3",
     "vite-tsconfig-paths": "3.5.0"
-  },
-  "dependencies": {
-    "@fontsource/mochiy-pop-p-one": "^4.5.9"
   }
 }
