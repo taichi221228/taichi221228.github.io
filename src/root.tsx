@@ -4,6 +4,7 @@ import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from "@builder.
 import { RouterHead } from "./components/router-head/router-head";
 import ThemeProvider from "./components/theme/provider";
 import globalStyles from "./global.css?inline";
+import { useFade } from "./hooks/fade";
 
 import "@fontsource/mochiy-pop-p-one";
 
@@ -15,6 +16,8 @@ export default component$(() => {
    * Dont remove the `<head>` and `<body>` elements.
    */
   useStyles$(globalStyles);
+
+  useFade();
 
   return (
     <QwikCityProvider>
