@@ -5,9 +5,9 @@ export const style = `
     opacity: 0;
     transition-property: opacity;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 500ms;
+    transition-duration: 750ms;
   }
-  [data-fade].is-visible {
+  [data-fade='true'] {
     opacity: 1;
   }
 `;
@@ -17,18 +17,17 @@ export function useFade() {
 
   useClientEffect$(() => {
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const element = entry.target as HTMLElement;
-
-        const delay = (Number(element.dataset.fade) ?? 1 - 1) * 250;
-
-        setTimeout(() => element.classList.add("is-visible"), delay);
+      entries.forEach(({ target, isIntersecting }) => {
+        if (!isIntersecting) return;
+        const element = target as HTMLElement;
+        const isFaded = element.dataset.fade === "true";
+        if (isFaded) return;
+        element.style.transitionDelay = "250ms";
+        element.dataset.fade = "true";
       });
     });
 
     const elements = document.querySelectorAll("[data-fade]");
-    elements.forEach((element) => {
-      observer.observe(element);
-    });
+    elements.forEach((element) => observer.observe(element));
   });
 }
