@@ -3,9 +3,9 @@ import { component$, createContext, Slot, useClientEffect$, useContextProvider, 
 import { THEMES } from "~/constants/theme";
 import type { Theme } from "~/types/theme";
 
-type ThemeStore = { isMenuVisible: boolean } & Pick<Theme, "id" | "isDarkType">;
+type Store = { isMenuVisible: boolean } & Pick<Theme, "id" | "isDarkType">;
 
-export const themeStyle = THEMES.map(
+export const style = THEMES.map(
   ({ id, colors }) => `
     .theme-${id} {
       ${Object.entries(colors)
@@ -18,38 +18,38 @@ export const themeStyle = THEMES.map(
   `
 ).join("");
 
-export const ThemeContext = createContext<ThemeStore>("theme");
+export const ThemeContext = createContext<Store>("theme");
 
 export default component$(() => {
-  useStyles$(themeStyle);
+  useStyles$(style);
 
-  const themeStore = useStore<ThemeStore>({ id: THEMES[0].id, isDarkType: THEMES[0].isDarkType, isMenuVisible: false });
-  useContextProvider(ThemeContext, themeStore);
+  const store = useStore<Store>({ id: THEMES[0].id, isDarkType: THEMES[0].isDarkType, isMenuVisible: false });
+  useContextProvider(ThemeContext, store);
 
   useClientEffect$(() => {
-    themeStore.id = localStorage.getItem("theme") ?? THEMES[0].id;
+    store.id = localStorage.getItem("theme") ?? THEMES[0].id;
   });
 
   useClientEffect$(({ track }) => {
-    const id = track(() => themeStore.id);
+    const id = track(() => store.id);
     const theme = THEMES.find((theme) => theme.id === id);
     if (!theme) return;
     localStorage.setItem("theme", id);
-    themeStore.isDarkType = theme.isDarkType;
+    store.isDarkType = theme.isDarkType;
   });
 
   useClientEffect$(({ track }) => {
-    const isMenuVisible = track(() => themeStore.isMenuVisible);
+    const isMenuVisible = track(() => store.isMenuVisible);
     isMenuVisible && window.scrollTo(0, 0);
   });
 
   return (
-    <div class={`theme-${themeStore.id} bg-primary text-secondary`}>
+    <div class={`theme-${store.id} bg-primary text-secondary`}>
       <Slot />
       <style>
         {`
           body {
-            --tw-shadow-rgb-code: ${themeStore.isDarkType ? "125 125 125" : "0 0 0"};
+            --tw-shadow-rgb-code: ${store.isDarkType ? "125 125 125" : "0 0 0"};
           }
         `}
       </style>
