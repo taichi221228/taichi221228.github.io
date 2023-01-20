@@ -20,8 +20,8 @@ export const style = `
     `
   ).join("")}
   ::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
+    height: 0.5rem;
+    width: 0.5rem;
   }
   ::-webkit-scrollbar-track {
     background-color: var(--tw-color-primary-offset);
