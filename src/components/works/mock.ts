@@ -7,7 +7,7 @@ export const items = [
     description,
     link: "https://www.builder.io/",
     image: {
-      src: "https://loremflickr.com/320/320/oacean",
+      src: "/images/boys-festival.jpg",
       alt: "",
     },
   },
@@ -17,7 +17,7 @@ export const items = [
     description,
     link: "https://www.builder.io/",
     image: {
-      src: "https://loremflickr.com/320/320/sky",
+      src: "/images/halloween.jpg",
       alt: "",
     },
   },
@@ -27,7 +27,7 @@ export const items = [
     description,
     link: "https://www.builder.io/",
     image: {
-      src: "https://loremflickr.com/320/320/forest",
+      src: "/images/hanami.jpg",
       alt: "",
     },
   },
@@ -37,7 +37,7 @@ export const items = [
     description,
     link: "https://www.builder.io/",
     image: {
-      src: "https://loremflickr.com/320/320/space",
+      src: "/images/xmas.jpg",
       alt: "",
     },
   },
