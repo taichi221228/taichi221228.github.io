@@ -5,7 +5,11 @@ const plugin = require("tailwindcss/plugin");
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        pointer: { raw: "(pointer: fine)" },
+      },
+    },
     colors: {
       transparent: "transparent",
       primary: "var(--tw-color-primary)",
