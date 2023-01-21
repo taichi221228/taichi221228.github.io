@@ -17,7 +17,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Fukuda Taichi",
+  title: "Taichi Fukuda",
   meta: [
     {
       name: "description",
