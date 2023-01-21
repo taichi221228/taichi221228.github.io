@@ -1,6 +1,6 @@
 import { useClientEffect$, useStyles$ } from "@builder.io/qwik";
 
-export const style = `
+export const styles = `
   [data-fade] {
     opacity: 0;
     transition-property: opacity;
@@ -13,7 +13,7 @@ export const style = `
 `;
 
 export function useFade() {
-  useStyles$(style);
+  useStyles$(styles);
 
   useClientEffect$(() => {
     const observer = new IntersectionObserver((entries) => {

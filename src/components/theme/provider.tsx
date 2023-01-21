@@ -5,7 +5,7 @@ import type { Theme } from "~/types/theme";
 
 type Store = { isMenuVisible: boolean } & Pick<Theme, "id" | "isDarkType">;
 
-export const style = `
+export const styles = `
   ${THEMES.map(
     ({ id, colors, isDarkType }) => `
       [data-theme="${id}"] {
@@ -37,7 +37,7 @@ export const style = `
 export const ThemeContext = createContext<Store>("theme");
 
 export default component$(() => {
-  useStyles$(style);
+  useStyles$(styles);
 
   const store = useStore<Store>({ ...THEMES[0], isMenuVisible: false });
   useContextProvider(ThemeContext, store);
