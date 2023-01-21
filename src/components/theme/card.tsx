@@ -16,7 +16,9 @@ export default component$((props: Props) => {
   return (
     <div
       data-theme={props.id}
+      tabIndex={theme.isMenuVisible ? 0 : -1}
       onClick$={props.onClick$}
+      onKeyDown$={(event) => event.key === "Enter" && props.onClick$()}
       class={`${
         theme.id === props.id ? "border-tertiary" : `pointer:cursor-pointer pointer:hover:scale-110 border-transparent hover:shadow`
       } bg-primary rounded-xl border-2 p-3 transition-transform duration-300`}
