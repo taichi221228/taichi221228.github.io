@@ -8,7 +8,7 @@ export default component$(() => {
     <>
       <main>
         <Header />
-        <div class="mx-auto max-w-7xl">
+        <div class="wrapper">
           <Slot />
         </div>
       </main>

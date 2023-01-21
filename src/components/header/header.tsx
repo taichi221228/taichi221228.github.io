@@ -8,8 +8,8 @@ export default component$(() => {
   return (
     <>
       <ThemeMenu />
-      <header data-fade class="py-8">
-        <div class="mx-auto flex w-11/12 max-w-7xl justify-between">
+      <header data-fade class="wrapper py-6 md:py-8">
+        <div class="flex justify-between">
           <div>
             <a class="hover:text-tertiary flex items-center gap-2 transition-colors duration-300" href="https://www.github.com/taichi221228" target="_blank">
               <Icon />

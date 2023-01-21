@@ -15,3 +15,9 @@
     font-family: "Mochiy Pop P One", sans-serif;
   }
 }
+
+@layer utilities {
+  .wrapper {
+    @apply mx-auto w-[90%] max-w-7xl;
+  }
+}

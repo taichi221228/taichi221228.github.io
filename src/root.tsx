@@ -26,7 +26,7 @@ export default component$(() => {
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
       </head>
-      <body lang="en">
+      <body class="overflow-x-hidden">
         <ThemeProvider>
           <div class="relative z-10">
             <RouterOutlet />

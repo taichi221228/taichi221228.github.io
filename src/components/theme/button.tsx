@@ -4,15 +4,15 @@ import { component$ } from "@builder.io/qwik";
 import { ThemeContext } from "./provider";
 
 export default component$(() => {
-  const themeContext = useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
 
   const size = 24;
 
   return (
     <button
-      onClick$={() => (themeContext.isMenuVisible = !themeContext.isMenuVisible)}
+      onClick$={() => (theme.isMenuVisible = !theme.isMenuVisible)}
       class={`${
-        themeContext.isDarkType ? "hover:brightness-150" : "hover:brightness-95"
+        theme.isDarkType ? "pointer:hover:brightness-150" : "pointer:hover:brightness-95"
       } bg-primary-offset flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300`}
     >
       <svg

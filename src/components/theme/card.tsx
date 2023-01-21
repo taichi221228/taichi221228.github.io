@@ -11,15 +11,15 @@ type Props = {
 } & Pick<Theme, "id" | "name">;
 
 export default component$((props: Props) => {
-  const themeContext = useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
 
   return (
     <div
       data-theme={props.id}
       onClick$={props.onClick$}
       class={`${
-        themeContext.id === props.id ? "border-tertiary border-2" : `cursor-pointer hover:scale-110 hover:shadow`
-      } bg-primary rounded-xl p-3 transition-transform duration-300`}
+        theme.id === props.id ? "border-tertiary" : `pointer:cursor-pointer pointer:hover:scale-110 border-transparent hover:shadow`
+      } bg-primary rounded-xl border-2 p-3 transition-transform duration-300`}
     >
       <p class="text-secondary mb-2 text-center text-xs">{props.name}</p>
       <div class="flex">
