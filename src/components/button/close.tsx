@@ -14,6 +14,7 @@ export default component$((props: Props) => {
 
   return (
     <button
+      aria-label="Close"
       tabIndex={theme.isMenuVisible ? 0 : -1}
       onClick$={props.onClick$}
       class={`${theme.isDarkType ? "pointer:hover:brightness-150" : "pointer:hover:brightness-95"} ${

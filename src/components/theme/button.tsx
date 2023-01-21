@@ -10,6 +10,7 @@ export default component$(() => {
 
   return (
     <button
+      aria-label="Toggle theme menu"
       onClick$={() => (theme.isMenuVisible = !theme.isMenuVisible)}
       class={`${
         theme.isDarkType ? "pointer:hover:brightness-150" : "pointer:hover:brightness-95"
