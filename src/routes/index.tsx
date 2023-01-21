@@ -17,11 +17,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "title",
+  title: "tic",
   meta: [
     {
       name: "description",
-      content: "description",
+      content: "Taichi is front-end developer based in Osaka.",
     },
   ],
 };
