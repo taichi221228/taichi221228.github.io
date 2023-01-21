@@ -22,7 +22,7 @@ export function useFade() {
         const element = target as HTMLElement;
         const isFaded = element.dataset.fade === "true";
         if (isFaded) return;
-        element.style.transitionDelay = "250ms";
+        element.style.transitionDelay = "200ms";
         element.dataset.fade = "true";
       });
     });
