@@ -3,8 +3,8 @@ import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from "@builder.
 
 import { RouterHead } from "./components/router-head/router-head";
 import ThemeProvider from "./components/theme/provider";
-import styles from "./global.css?inline";
 import { useFade } from "./hooks/fade";
+import styles from "./styles/global.css?inline";
 
 import "@fontsource/mochiy-pop-p-one";
 
