@@ -1,4 +1,4 @@
-export interface Theme {
+export type Theme = {
   id: string;
   name: string;
   colors: {
@@ -12,4 +12,6 @@ export interface Theme {
     quinary: string;
   };
   isDarkType: boolean;
-}
+};
+
+export type ThemeStore = { isMenuVisible: boolean } & Pick<Theme, "id" | "isDarkType">;
