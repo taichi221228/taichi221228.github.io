@@ -1,18 +1,17 @@
 import { component$ } from "@builder.io/qwik";
 
 import { items } from "./mock";
+import { FADE_CLASS } from "~/constants/fade";
 import { Atropos } from "~/integrations/react/atropos";
 
 export default component$(() => {
   return (
     <section>
-      <h2 data-fade class="mb-9 text-3xl md:text-4xl">
-        WORKS
-      </h2>
+      <h2 class={`${FADE_CLASS} mb-9 text-3xl md:text-4xl`}>WORKS</h2>
 
       <div class="grid gap-10 sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] sm:gap-6">
         {items.map((item) => (
-          <div key={item.id} data-fade>
+          <div key={item.id} class={FADE_CLASS}>
             <a href={item.link}>
               <Atropos client:visible className="pointer:pointer-events-auto group pointer-events-none" innerClassName="rounded-xl">
                 <div class="relative pt-[75%] md:pt-[100%]">
