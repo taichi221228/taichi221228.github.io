@@ -1,9 +1,9 @@
-import { useClientEffect$, useContextProvider, useStore, useStyles$ } from "@builder.io/qwik";
+import { useClientEffect$, useContextProvider, useStore, useStyles$ } from '@builder.io/qwik';
 
-import { ThemeContext } from "~/components/theme/provider";
-import { THEMES } from "~/constants/theme";
-import { styles } from "~/styles/theme";
-import type { ThemeStore } from "~/types/theme";
+import { ThemeContext } from '~/components/theme/provider';
+import { THEMES } from '~/constants/theme';
+import { styles } from '~/styles/theme';
+import type { ThemeStore } from '~/types/theme';
 
 export function useTheme() {
   useStyles$(styles);
@@ -12,7 +12,7 @@ export function useTheme() {
   useContextProvider(ThemeContext, store);
 
   useClientEffect$(() => {
-    store.id = localStorage.getItem("theme") ?? THEMES[0].id;
+    store.id = localStorage.getItem('theme') ?? THEMES[0].id;
   });
 
   useClientEffect$(({ track }) => {
@@ -21,7 +21,7 @@ export function useTheme() {
     if (!theme) return;
     store.isDarkType = theme.isDarkType;
     const { documentElement } = document;
-    localStorage.setItem("theme", id);
+    localStorage.setItem('theme', id);
     documentElement.dataset.theme = id;
   });
 

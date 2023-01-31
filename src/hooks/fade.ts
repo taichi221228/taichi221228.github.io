@@ -1,6 +1,6 @@
-import { useClientEffect$ } from "@builder.io/qwik";
+import { useClientEffect$ } from '@builder.io/qwik';
 
-import { FADE_LOCATOR } from "~/constants/fade";
+import { FADE_LOCATOR } from '~/constants/fade';
 
 export function useFade() {
   useClientEffect$(() => {
@@ -8,7 +8,7 @@ export function useFade() {
       entries.forEach(({ target, isIntersecting }) => {
         const element = target as HTMLElement;
         if (isIntersecting) {
-          element.classList.remove("opacity-0");
+          element.classList.remove('opacity-0');
           observer.unobserve(element);
         }
       });

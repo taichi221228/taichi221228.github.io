@@ -1,12 +1,12 @@
-import { component$, useStyles$ } from "@builder.io/qwik";
-import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from "@builder.io/qwik-city";
+import { component$, useStyles$ } from '@builder.io/qwik';
+import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-city';
 
-import { RouterHead } from "./components/router-head/router-head";
-import ThemeProvider from "./components/theme/provider";
-import { useFade } from "./hooks/fade";
-import styles from "./styles/global.css?inline";
+import { RouterHead } from './components/router-head/router-head';
+import ThemeProvider from './components/theme/provider';
+import { useFade } from './hooks/fade';
+import styles from './styles/global.css?inline';
 
-import "@fontsource/mochiy-pop-p-one";
+import '@fontsource/mochiy-pop-p-one';
 
 export default component$(() => {
   /**

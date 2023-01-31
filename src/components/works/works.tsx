@@ -1,8 +1,8 @@
-import { component$ } from "@builder.io/qwik";
+import { component$ } from '@builder.io/qwik';
 
-import { items } from "./mock";
-import { FADE_CLASS } from "~/constants/fade";
-import { Atropos } from "~/integrations/react/atropos";
+import { items } from './mock';
+import { FADE_CLASS } from '~/constants/fade';
+import { Atropos } from '~/integrations/react/atropos';
 
 export default component$(() => {
   return (
@@ -13,15 +13,15 @@ export default component$(() => {
         {items.map((item) => (
           <div key={item.id} class={FADE_CLASS}>
             <a href={item.link}>
-              <Atropos client:visible className="pointer:pointer-events-auto group pointer-events-none" innerClassName="rounded-xl">
+              <Atropos client:visible className="group pointer-events-none pointer:pointer-events-auto" innerClassName="rounded-xl">
                 <div class="relative pt-[75%] md:pt-[100%]">
                   <div
                     style={{ backgroundImage: `url(${item.image.src})` }}
-                    class="bg-primary-offset absolute inset-0 h-full w-full bg-cover bg-no-repeat p-4"
+                    class="absolute inset-0 h-full w-full bg-primary-offset bg-cover bg-no-repeat p-4"
                     data-atropos-offset="1"
                   >
                     <h3 class="mb-4 text-3xl">{item.title}</h3>
-                    <p class="pointer:translate-y-4 pointer:opacity-0 pointer:duration-500 pointer:group-hover:opacity-100 pointer:transition-all pointer:group-hover:translate-y-0 md:text-lg">
+                    <p class="md:text-lg pointer:translate-y-4 pointer:opacity-0 pointer:transition-all pointer:duration-500 pointer:group-hover:translate-y-0 pointer:group-hover:opacity-100">
                       {item.description}
                     </p>
                   </div>

@@ -1,11 +1,11 @@
-import { useContext, useSignal } from "@builder.io/qwik";
-import { component$ } from "@builder.io/qwik";
+import { useContext, useSignal } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 
-import CloseButton from "../button/close";
+import CloseButton from '../button/close';
 
-import Card from "./card";
-import { ThemeContext } from "./provider";
-import { THEMES } from "~/constants/theme";
+import Card from './card';
+import { ThemeContext } from './provider';
+import { THEMES } from '~/constants/theme';
 
 export default component$(() => {
   const theme = useContext(ThemeContext);
@@ -15,7 +15,7 @@ export default component$(() => {
     <div
       ref={ref}
       style={{ height: theme.isMenuVisible ? `${ref.value?.scrollHeight}px` : 0 }}
-      class={`bg-primary-offset relative overflow-hidden transition-all`}
+      class={`relative overflow-hidden bg-primary-offset transition-all`}
     >
       <div class="px-4 py-6 md:px-6 md:py-8">
         <CloseButton onClick$={() => (theme.isMenuVisible = false)} class="absolute top-2 right-2 md:top-3 md:right-3" />

@@ -1,9 +1,9 @@
-import { component$ } from "@builder.io/qwik";
+import { component$ } from '@builder.io/qwik';
 
-import Hero from "~/components/hero/hero";
-import Works from "~/components/works/works";
+import Hero from '~/components/hero/hero';
+import Works from '~/components/works/works';
 
-import type { DocumentHead } from "@builder.io/qwik-city";
+import type { DocumentHead } from '@builder.io/qwik-city';
 
 export default component$(() => {
   return (
@@ -17,11 +17,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Taichi Fukuda",
+  title: 'Taichi Fukuda',
   meta: [
     {
-      name: "description",
-      content: "Taichi is front-end developer based in Osaka.",
+      name: 'description',
+      content: 'Taichi is front-end developer based in Osaka.',
     },
   ],
 };

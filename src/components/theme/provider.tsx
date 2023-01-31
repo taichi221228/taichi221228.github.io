@@ -1,9 +1,9 @@
-import { component$, createContext, Slot } from "@builder.io/qwik";
+import { component$, createContext, Slot } from '@builder.io/qwik';
 
-import { useTheme } from "~/hooks/theme";
-import type { ThemeStore } from "~/types/theme";
+import { useTheme } from '~/hooks/theme';
+import type { ThemeStore } from '~/types/theme';
 
-export const ThemeContext = createContext<ThemeStore>("theme");
+export const ThemeContext = createContext<ThemeStore>('theme');
 
 export default component$(() => {
   useTheme();

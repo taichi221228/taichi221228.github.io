@@ -1,44 +1,44 @@
-const description = "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.";
+const description = 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.';
 
 export const items = [
   {
-    id: "1",
-    title: "foo",
+    id: '1',
+    title: 'foo',
     description,
-    link: "https://www.builder.io/",
+    link: 'https://www.builder.io/',
     image: {
-      src: "/images/boys-festival.jpg",
-      alt: "",
+      src: '/images/boys-festival.jpg',
+      alt: '',
     },
   },
   {
-    id: "2",
-    title: "bar",
+    id: '2',
+    title: 'bar',
     description,
-    link: "https://www.builder.io/",
+    link: 'https://www.builder.io/',
     image: {
-      src: "/images/halloween.jpg",
-      alt: "",
+      src: '/images/halloween.jpg',
+      alt: '',
     },
   },
   {
-    id: "3",
-    title: "baz",
+    id: '3',
+    title: 'baz',
     description,
-    link: "https://www.builder.io/",
+    link: 'https://www.builder.io/',
     image: {
-      src: "/images/hanami.jpg",
-      alt: "",
+      src: '/images/hanami.jpg',
+      alt: '',
     },
   },
   {
-    id: "4",
-    title: "qux",
+    id: '4',
+    title: 'qux',
     description,
-    link: "https://www.builder.io/",
+    link: 'https://www.builder.io/',
     image: {
-      src: "/images/xmas.jpg",
-      alt: "",
+      src: '/images/xmas.jpg',
+      alt: '',
     },
   },
 ];

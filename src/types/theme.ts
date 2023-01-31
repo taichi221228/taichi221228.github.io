@@ -14,4 +14,4 @@ export type Theme = {
   isDarkType: boolean;
 };
 
-export type ThemeStore = { isMenuVisible: boolean } & Pick<Theme, "id" | "isDarkType">;
+export type ThemeStore = { isMenuVisible: boolean } & Pick<Theme, 'id' | 'isDarkType'>;
